@@ -40,6 +40,9 @@ if dein#check_install()
 endif
 "End dein Scripts-------------------------
 
+" indent vim
+let g:indent_guides_enable_on_vim_startup = 1
+
 " by https://qiita.com/morikooooo/items/9fd41bcd8d1ce9170301
 " setting
 "文字コードをUFT-8に設定
