@@ -40,9 +40,6 @@ if dein#check_install()
 endif
 "End dein Scripts-------------------------
 
-" indent vim
-let g:indent_guides_enable_on_vim_startup = 1
-
 " neocomplete start --------------------------------------------------
 " Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
@@ -133,8 +130,12 @@ let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 " jedi-vim and neocomplete (end) ----------------------------------------
 
 " indent guide ---------------------------------------------------------
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=8
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=235
 let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
 " indent guide ---------------------------------------------------------
 
 " default setting ------------------------------------------------------
@@ -212,3 +213,6 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " バックスペース設定
 set backspace=2
 
+" color shceme
+colorscheme molokai
+call smartinput_endwise#define_default_rules()

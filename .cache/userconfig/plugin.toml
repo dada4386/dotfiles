@@ -8,11 +8,16 @@ repo = 'Shougo/vimproc.vim'
 repo = 'Shougo/neocomplete.vim'
 
 [[plugins]]
-repo = "nathanaelkane/vim-indent-guides"
-
-[[plugins]]
 repo = "thinca/vim-quickrun"
 
 [[plugins]]
 repo = "nathanaelkane/vim-indent-guides"
 
+[[plugins]]
+repo = "kana/vim-smartinput"
+
+[[plugins]]
+repo = "cohama/vim-smartinput-endwise"
+
+[[plugins]]
+repo = "tomasr/molokai"
