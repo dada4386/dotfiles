@@ -21,3 +21,9 @@ repo = "cohama/vim-smartinput-endwise"
 
 [[plugins]]
 repo = "tomasr/molokai"
+
+[[plugins]]
+repo = "w0rp/ale"
+
+[[plugins]]
+repo = "tpope/vim-fugitive"

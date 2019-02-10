@@ -138,6 +138,20 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 " indent guide ---------------------------------------------------------
 
+" " ale (start) -----------------------------------------------------------
+" " 保存時のみ実行する
+" let g:ale_lint_on_text_changed = 0
+" " 表示に関する設定
+" let g:airline#extensions#ale#open_lnum_symbol = '('
+" let g:airline#extensions#ale#close_lnum_symbol = ')'
+" let g:ale_echo_msg_format = '[%linter%]%code: %%s'
+" highlight link ALEErrorSign Tag
+" highlight link ALEWarningSign StorageClass
+" " Ctrl + kで次の指摘へ、Ctrl + jで前の指摘へ移動
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" " ale (end) -----------------------------------------------------------
+
 " default setting ------------------------------------------------------
 " by https://qiita.com/morikooooo/items/9fd41bcd8d1ce9170301
 "文字コードをUFT-8に設定
@@ -216,3 +230,7 @@ set backspace=2
 " color shceme
 colorscheme molokai
 call smartinput_endwise#define_default_rules()
+
+" 垂直分割をデフォルトにする
+set diffopt+=vertical
+
