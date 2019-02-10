@@ -4,3 +4,12 @@
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+
+[[plugins]]
+repo = "nathanaelkane/vim-indent-guides"
+
+[[plugins]]
+repo = "thinca/vim-quickrun"
+
