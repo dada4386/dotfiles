@@ -228,6 +228,7 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 set backspace=2
 
 " color shceme
+set t_Co=256
 colorscheme molokai
 call smartinput_endwise#define_default_rules()
 
