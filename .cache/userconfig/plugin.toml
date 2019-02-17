@@ -27,3 +27,6 @@ repo = "w0rp/ale"
 
 [[plugins]]
 repo = "tpope/vim-fugitive"
+
+[[plugins]]
+repo = "scrooloose/nerdtree"

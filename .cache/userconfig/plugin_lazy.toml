@@ -9,3 +9,6 @@ on_source = ['unite.vim']
 repo = "davidhalter/jedi-vim"
 on_ft = ['python']
 
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']

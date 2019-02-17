@@ -83,17 +83,13 @@ inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 " inoremap <expr><C-i> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
+
 " Close popup by <Space>.
-inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+" inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
 " AutoComplPop like behavior.
 "let g:neocomplete#enable_auto_select = 1
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplete#enable_auto_select = 1
-"let g:neocomplete#disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -106,9 +102,9 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
-"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
@@ -122,6 +118,7 @@ autocmd FileType python setlocal completeopt-=preview
 autocmd FileType python setlocal omnifunc=jedi#completions
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
+let g:jedi#show_call_signatures = 0
 
 if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
@@ -138,18 +135,18 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 " indent guide ---------------------------------------------------------
 
-" " ale (start) -----------------------------------------------------------
-" " 保存時のみ実行する
-" let g:ale_lint_on_text_changed = 0
-" " 表示に関する設定
-" let g:airline#extensions#ale#open_lnum_symbol = '('
-" let g:airline#extensions#ale#close_lnum_symbol = ')'
-" let g:ale_echo_msg_format = '[%linter%]%code: %%s'
-" highlight link ALEErrorSign Tag
-" highlight link ALEWarningSign StorageClass
-" " Ctrl + kで次の指摘へ、Ctrl + jで前の指摘へ移動
-" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-" nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" ale (start) -----------------------------------------------------------
+" 保存時のみ実行する
+let g:ale_lint_on_text_changed = 0
+" 表示に関する設定
+let g:airline#extensions#ale#open_lnum_symbol = '('
+let g:airline#extensions#ale#close_lnum_symbol = ')'
+let g:ale_echo_msg_format = '[%linter%]%code: %%s'
+highlight link ALEErrorSign Tag
+highlight link ALEWarningSign StorageClass
+" Ctrl + kで次の指摘へ、Ctrl + jで前の指摘へ移動
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " " ale (end) -----------------------------------------------------------
 
 " default setting ------------------------------------------------------
@@ -170,10 +167,6 @@ set showcmd
 " 見た目系
 " 行番号を表示
 set number
-" 現在の行を強調表示
-"set cursorline
-" 現在の行を強調表示（縦）
-"set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -189,14 +182,6 @@ nnoremap j gj
 nnoremap k gk
 
 " Tab系
-" " 不可視文字を可視化(タブが「▸-」と表示される)
-" set list listchars=tab:\▸\-
-" " Tab文字を半角スペースにする
-" set expandtab
-" " 行頭以外のTab文字の表示幅（スペースいくつ分）
-" set tabstop=2
-" " 行頭でのTab文字の表示幅
-" set shiftwidth=2
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -231,6 +216,10 @@ set backspace=2
 set t_Co=256
 colorscheme molokai
 call smartinput_endwise#define_default_rules()
+
+" NERDTree
+map <F2> :NERDTreeToggle<CR>
+let NERDTreeShowHidden = 1
 
 " 垂直分割をデフォルトにする
 set diffopt+=vertical
