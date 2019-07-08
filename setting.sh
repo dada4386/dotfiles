@@ -12,6 +12,7 @@ fi
 ln -s $ORIG/$VIMRC $HOME/$VIMRC
 
 # userconfig
+mkdir -p ~/.cache
 CONFIG=".cache/userconfig"
 if [ -d $CONFIG ]; then
     mv $CONFIG ${CONFIG}.old

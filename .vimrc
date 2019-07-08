@@ -112,19 +112,19 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 " neocomplete end ----------------------------------------------------
 
 " jedi-vim and neocomplete (start) ----------------------------------------
-" docstringは表示しない
-autocmd FileType python setlocal completeopt-=preview
-
-autocmd FileType python setlocal omnifunc=jedi#completions
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#show_call_signatures = 0
-let g:jedi#auto_initialization    = 0
-let g:jedi#popup_select_first     = 0
-if !exists('g:neocomplete#force_omni_input_patterns')
-    let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+" docstringは表示しな
+"autocmd FileType python setlocal completeopt-=preview
+"
+"autocmd FileType python setlocal omnifunc=jedi#completions
+"let g:jedi#completions_enabled = 0
+"let g:jedi#auto_vim_configuration = 0
+"let g:jedi#show_call_signatures = 0
+"let g:jedi#auto_initialization    = 0
+"let g:jedi#popup_select_first     = 0
+"if !exists('g:neocomplete#force_omni_input_patterns')
+"    let g:neocomplete#force_omni_input_patterns = {}
+"endif
+"let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 " jedi-vim and neocomplete (end) ----------------------------------------
 
 " indent guide ---------------------------------------------------------
@@ -194,6 +194,9 @@ augroup fileTypeIndent
     autocmd!
     autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
     autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.tf setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.yml setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 " 検索系
