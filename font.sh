@@ -33,3 +33,5 @@ rm Ricty*.ttf
 mv RictyDiminished*.ttc ../fonts/RictyDiminished/
 
 fc-cache -fv
+UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${UUID}/ font "RictyDiminished 12"
