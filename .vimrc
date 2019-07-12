@@ -70,6 +70,7 @@ set virtualedit=onemore
 set smartindent
 " 括弧入力時の対応する括弧を表示
 set noshowmatch
+let loaded_matchparen = 1
 " ステータスラインを常に表示
 set laststatus=2
 " コマンドラインの補完

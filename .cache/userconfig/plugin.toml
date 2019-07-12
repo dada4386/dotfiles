@@ -189,5 +189,9 @@ hook_add = '''
 [[plugins]]
 repo = "Raimondi/delimitMate"
 
+# 括弧の削除・置換等のプラグイン
 [[plugins]]
 repo = "tpope/vim-surround"
+
+[[plugins]]
+repo = "airblade/vim-gitgutter"
