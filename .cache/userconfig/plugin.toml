@@ -122,6 +122,7 @@ repo = "tpope/vim-surround"
 [[plugins]]
 repo = "airblade/vim-gitgutter"
 
+#=========================補完プラグイン郡==============================
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
@@ -138,6 +139,24 @@ hook_add = '''
     let g:deoplete#enable_smart_case = 1
     let g:deoplete#file#enable_buffer_path = 1
     let g:deoplete#max_list = 10000
+
+    " Recommended key-mappings.
+    " <CR>: close popup and save indent.
+    inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+    function! s:my_cr_function()
+      return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+      " For no inserting <CR> key.
+      "return pumvisible() ? "\<C-y>" : "\<CR>"
+    endfunction
+    " inoremap <expr><C-i> neocomplete#smart_close_popup()."\<C-h>"
+    inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
+    " Close popup by <Space>.
+    " inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"    
+
+    " <TAB>: completion.
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" :
+        \ neosnippet#expandable_or_jumpable() ?
+        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<S-TAB>"
     inoremap <expr><tab> pumvisible() ? "\<C-n>" :
         \ neosnippet#expandable_or_jumpable() ?
         \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
@@ -165,3 +184,4 @@ repo = "roxma/nvim-yarp"
 [[plugins]]
 depends = ['Shougo/deoplete.nvim']
 repo = "roxma/vim-hug-neovim-rpc"
+#=========================補完プラグイン郡==============================
