@@ -19,4 +19,5 @@ if [ -d $CONFIG ]; then
 fi
 ln -s $ORIG/$CONFIG $HOME/$CONFIG
 
-./font.sh
+bash ./vim_install.sh
+bash ./font.sh
