@@ -188,3 +188,6 @@ hook_add = '''
 # カッコ補完
 [[plugins]]
 repo = "Raimondi/delimitMate"
+
+[[plugins]]
+repo = "tpope/vim-surround"

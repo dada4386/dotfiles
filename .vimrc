@@ -69,7 +69,7 @@ set virtualedit=onemore
 " インデントはスマートインデント
 set smartindent
 " 括弧入力時の対応する括弧を表示
-set showmatch
+set noshowmatch
 " ステータスラインを常に表示
 set laststatus=2
 " コマンドラインの補完
@@ -108,6 +108,8 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+" 括弧ハイライトを消す
+highlight MatchParen cterm=NONE ctermfg=white ctermbg=black
 
 " バックスペース設定
 set backspace=2
@@ -132,3 +134,4 @@ if has('syntax')
     call ZenkakuSpace()
 endif
 """"""""""""""""""""""""""""""
+
