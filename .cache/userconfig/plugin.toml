@@ -96,17 +96,6 @@ hook_add = '''
     " indent guide ---------------------------------------------------------
 '''
 
-# smart input
-#[[plugins]]
-#repo = "kana/vim-smartinput"
-
-# input endwize 
-#[[plugins]]
-#repo = "cohama/vim-smartinput-endwise"
-#hook_add = '''
-#    call smartinput_endwise#define_default_rules()
-#'''
-
 # color 
 [[plugins]]
 repo = "tomasr/molokai"
@@ -155,6 +144,7 @@ hook_add = '''
     let g:terraform_fold_sections=1
 '''
 
+#======================footbar関連========================
 [[plugins]]
 repo = "vim-airline/vim-airline-themes"
 
@@ -178,7 +168,9 @@ hook_add = '''
     let g:airline#extensions#default#section_truncate_width = {}
     let g:airline#extensions#whitespace#enabled = 1 
 '''
+#======================footbar関連========================
 
+# yank履歴機能
 [[plugins]]
 repo = "LeafCage/yankround.vim"
 depends = ['Shougo/neomru.vim']
@@ -192,3 +184,7 @@ hook_add = '''
     nmap <C-p> <Plug>(yankround-prev)
     nmap <C-n> <Plug>(yankround-next)
 '''
+
+# カッコ補完
+[[plugins]]
+repo = "Raimondi/delimitMate"
