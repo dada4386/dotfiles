@@ -58,7 +58,7 @@ repo = "tpope/vim-fugitive"
 repo = "scrooloose/nerdtree"
 hook_add = '''
     map <F2> :NERDTreeToggle<CR>
-    let NERDTreeShowHidden = 1
+    au MyAutoCmd VimEnter * nested let NERDTreeShowHidden = 1
 '''
 
 # for terraform 
@@ -80,10 +80,12 @@ repo = "ryanoasis/vim-devicons"
 [[plugins]]
 repo = "vim-airline/vim-airline"
 hook_add = '''
-    let g:airline_theme = 'wombat'
+    let g:airline_theme = 'molokai'
+    let g:airline_powerline_fonts = 1
     set laststatus=2
     let g:airline#extensions#branch#enabled = 1
     let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#buffer_idx_mode = 1
     let g:airline#extensions#wordcount#enabled = 0
     let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'y', 'z']]
     let g:airline_section_c = '%t'
@@ -93,6 +95,8 @@ hook_add = '''
     let g:airline#extensions#ale#warning_symbol = '  '
     let g:airline#extensions#default#section_truncate_width = {}
     let g:airline#extensions#whitespace#enabled = 1 
+    " vim-airline 遅延対策
+    set ttimeoutlen=50
 '''
 #======================footbar関連========================
 
