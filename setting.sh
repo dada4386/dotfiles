@@ -20,4 +20,3 @@ fi
 ln -s $ORIG/$CONFIG $HOME/$CONFIG
 
 $ORIG/dotfiles/vim_install.sh
-$ORIG/dotfiles/font.sh
