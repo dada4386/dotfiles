@@ -5,7 +5,7 @@ wget https://github.com/miiton/Cica/releases/download/v5.0.1/Cica_v5.0.1_with_em
 unzip Cica_v5.0.1_with_emoji.zip
 rm Cica_v5.0.1_with_emoji.zip
 
-mkdir ~/.fonts/Cica
+mkdir -p ~/.fonts/Cica
 mv Cica-* ~/.fonts/Cica
 
 fc-cache -fv
