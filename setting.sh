@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ORIG=`pwd`
+ORIG=$(cd $(dirname $0); pwd)
 cd ~
 HOME=`pwd`
 
@@ -19,4 +19,4 @@ if [ -d $CONFIG ]; then
 fi
 ln -s $ORIG/$CONFIG $HOME/$CONFIG
 
-$ORIG/dotfiles/vim_install.sh
+$ORIG/vim_install.sh
