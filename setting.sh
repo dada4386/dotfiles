@@ -5,13 +5,16 @@ cd ~
 HOME=`pwd`
 
 # vimrc
-VIMRC=".vimrc"
+mkdir -p ~/.config/nvim/
+cd ~/.config/nvim
+VIMRC="init.vim"
 if [ -e $VIMRC ]; then
     mv $VIMRC ${VIMRC}.old
 fi
-ln -s $ORIG/$VIMRC $HOME/$VIMRC
+ln -s $ORIG/$VIMRC $VIMRC
 
 # userconfig
+cd ~
 mkdir -p ~/.cache
 CONFIG=".cache/userconfig"
 if [ -d $CONFIG ]; then
