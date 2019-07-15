@@ -3,6 +3,10 @@ augroup MyAutoCmd
 autocmd!
 augroup END
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 " by https://qiita.com/wakaba130/items/4fc4c08ce76c78f36da3
 "
 "dein Scripts-----------------------------
