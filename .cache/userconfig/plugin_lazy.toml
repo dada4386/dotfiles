@@ -43,7 +43,6 @@ hook_source = '''
       "return pumvisible() ? "\<C-y>" : "\<CR>"
     endfunction
     inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
-    inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
     " <TAB>: completion.
     inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" :
