@@ -60,16 +60,6 @@ hook_add = '''
     map <F2> :NERDTreeToggle<CR>
     au MyAutoCmd VimEnter * nested let NERDTreeShowHidden = 1
 '''
-
-# for terraform 
-[[plugins]]
-repo = "hashivim/vim-terraform"
-hook_add = '''
-    let g:terraform_align=1
-    let g:terraform_fmt_on_save=1
-    let g:terraform_fold_sections=1
-'''
-
 #======================footbar関連========================
 [[plugins]]
 repo = "vim-airline/vim-airline-themes"
@@ -126,66 +116,15 @@ repo = "tpope/vim-surround"
 [[plugins]]
 repo = "airblade/vim-gitgutter"
 
-#=========================補完プラグイン郡==============================
 [[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo = "Shougo/deoplete.nvim"
-on_event = 'InsertCharPre'
+repo = "scrooloose/syntastic"
 hook_add = '''
-    let g:deoplete#enable_at_startup = 1
-    let g:deoplete#auto_complete_delay = 0
-    let g:deoplete#auto_complete_start_length = 1
-    let g:deoplete#enable_camel_case = 0
-    let g:deoplete#enable_ignore_case = 0
-    let g:deoplete#enable_refresh_always = 0
-    let g:deoplete#enable_smart_case = 1
-    let g:deoplete#file#enable_buffer_path = 1
-    let g:deoplete#max_list = 10000
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
 
-    " Recommended key-mappings.
-    " <CR>: close popup and save indent.
-    inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-    function! s:my_cr_function()
-      return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-      " For no inserting <CR> key.
-      "return pumvisible() ? "\<C-y>" : "\<CR>"
-    endfunction
-    " inoremap <expr><C-i> neocomplete#smart_close_popup()."\<C-h>"
-    inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
-    " Close popup by <Space>.
-    " inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"    
-
-    " <TAB>: completion.
-    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" :
-        \ neosnippet#expandable_or_jumpable() ?
-        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<S-TAB>"
-    inoremap <expr><tab> pumvisible() ? "\<C-n>" :
-        \ neosnippet#expandable_or_jumpable() ?
-        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
 '''
-ion_i = 1
-
-[[plugins]]
-repo = 'Shougo/neosnippet'
-hook_source = '''
-  imap <C-k> <Plug>(neosnippet_expand_or_jump)
-  smap <C-k> <Plug>(neosnippet_expand_or_jump)
-  xmap <C-k> <Plug>(neosnippet_expand_target)
-  if has('conceal')
-    set conceallevel=2 concealcursor=niv
-  endif
-'''
-on_i  = 1
-on_ft = ['snippet']
-depends = ['neosnippet-snippets']
-
-[[plugins]]
-depends = ['Shougo/deoplete.nvim']
-repo = "roxma/nvim-yarp"
-
-[[plugins]]
-depends = ['Shougo/deoplete.nvim']
-repo = "roxma/vim-hug-neovim-rpc"
-#=========================補完プラグイン郡==============================

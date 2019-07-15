@@ -26,7 +26,6 @@ if dein#load_state(s:dein_path)
   let g:config_dir  = expand('~/.cache/userconfig')
   let s:toml        = g:config_dir . '/plugin.toml'
   let s:lazy_toml   = g:config_dir . '/plugin_lazy.toml'
-
   " TOML 読み込み
   call dein#load_toml(s:toml,      {'lazy': 0})
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
@@ -34,7 +33,6 @@ if dein#load_state(s:dein_path)
   call dein#end()
   call dein#save_state()
 endif
-
 
 " Required:
 filetype plugin indent on

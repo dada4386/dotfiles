@@ -4,13 +4,12 @@ sudo apt-get remove --purge vim vim-runtime vim-common
 sudo apt-get install -y git build-essential ncurses-dev lua5.2 lua5.2-dev luajit python-dev python3-dev ruby-dev python3-pip python-setuptools
 pip3 install --upgrade neovim
 
-cd /opt/
-sudo git clone https://github.com/vim/vim
-cd vim/
+sudo add-apt-repository -y ppa:neovim-ppa/stable
+sudo apt-get update
+sudo apt-get install neovim -y
 
-sudo ./configure --with-features=huge --enable-multibyte --enable-luainterp=dynamic --enable-gpm --enable-cscope \
-    --enable-fontset --enable-fail-if-missing --prefix=/usr/local --enable-pythoninterp=dynamic --enable-python3interp=dynamic \
-    --enable-rubyinterp=dynamic
+sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
+sudo update-alternatives --config vi
+sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+sudo update-alternatives --config vim
 
-sudo make
-sudo make install

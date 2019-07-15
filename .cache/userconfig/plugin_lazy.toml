@@ -6,28 +6,89 @@ repo      = 'Shougo/neomru.vim'
 on_source = ['unite.vim']
 
 [[plugins]]
-repo = "davidhalter/jedi-vim"
-depends = ['Shougo/neocomplete.vim']
+repo = 'Shougo/neosnippet'
+hook_source = '''
+  imap <C-k> <Plug>(neosnippet_expand_or_jump)
+  smap <C-k> <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k> <Plug>(neosnippet_expand_target)
+  if has('conceal')
+    set conceallevel=2 concealcursor=niv
+  endif
+'''
+on_i  = 1
+on_ft = ['snippet']
+depends = ['neosnippet-snippets']
+
+# =================deoplete=====================================
+[[plugins]]
+repo = "Shougo/deoplete.nvim"
+depends = ['nvim-yarp', 'vim-hug-neovim-rpc']
+hook_source = '''
+    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#auto_complete_delay = 0
+    let g:deoplete#auto_complete_start_length = 1
+    let g:deoplete#enable_camel_case = 0
+    let g:deoplete#enable_ignore_case = 0
+    let g:deoplete#enable_refresh_always = 0
+    let g:deoplete#enable_smart_case = 1
+    let g:deoplete#file#enable_buffer_path = 1
+    let g:deoplete#max_list = 10000
+
+    " Recommended key-mappings.
+    " <CR>: close popup and save indent.
+    inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+    function! s:my_cr_function()
+      return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+      " For no inserting <CR> key.
+      "return pumvisible() ? "\<C-y>" : "\<CR>"
+    endfunction
+    inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
+    inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+
+    " <TAB>: completion.
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" :
+        \ neosnippet#expandable_or_jumpable() ?
+        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<S-TAB>"
+    inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+        \ neosnippet#expandable_or_jumpable() ?
+        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+'''
+on_i = 1
+
+# =================deoplete=====================================
+
+[[plugins]]
+repo = "zchee/deoplete-jedi"
 on_ft = ['python']
-hook_add = '''
-    " jedi-vim and neocomplete (start) ----------------------------------------
-    " docstringは表示しな
+hool_source = '''
     autocmd FileType python setlocal completeopt-=preview
-    "
     autocmd FileType python setlocal omnifunc=jedi#completions
+    let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3'
     let g:jedi#completions_enabled = 0
     let g:jedi#auto_vim_configuration = 0
     let g:jedi#show_call_signatures = 0
     let g:jedi#auto_initialization    = 0
     let g:jedi#popup_select_first     = 0
-    if !exists('g:neocomplete#force_omni_input_patterns')
-        let g:neocomplete#force_omni_input_patterns = {}
-    endif
-    let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
-    " jedi-vim and neocomplete (end) ----------------------------------------
 '''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
+
+# for terraform 
+[[plugins]]
+repo = "hashivim/vim-terraform"
+on_ft = "terraform"
+hook_add = '''
+    let g:terraform_align=1
+    let g:terraform_fmt_on_save=1
+    let g:terraform_fold_sections=1
+'''
+
+[[plugins]]
+on_ft = "terraform"
+repo = 'juliosueiras/vim-terraform-completion'
 
