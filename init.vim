@@ -90,9 +90,32 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
     autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.tf setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.ts setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.yml setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
+
+" set filetype
+autocmd BufNewFile,BufRead *.js setlocal ft=javascript
+autocmd BufNewFile,BufRead *.es6 setlocal ft=javascript
+autocmd BufNewFile,BufRead *.ejs setlocal ft=html
+autocmd BufNewFile,BufRead *.tera setlocal ft=html
+autocmd BufNewFile,BufRead *.py setlocal ft=python
+autocmd BufNewFile,BufRead *.rb setlocal ft=ruby
+autocmd BufNewFile,BufRead Gemfile setlocal ft=ruby
+autocmd BufNewFile,BufRead *.coffee setlocal ft=coffee
+autocmd BufNewFile,BufRead *.ts setlocal ft=typescript
+autocmd BufNewFile,BufRead *.md setlocal ft=markdown
+autocmd BufNewFile,BufRead *.pug setlocal ft=pug
+autocmd BufNewFile,BufRead *.amber setlocal ft=amber
+autocmd BufNewFile,BufRead *.gyp setlocal ft=json
+autocmd BufNewFile,BufRead *.cson setlocal ft=json
+autocmd BufNewFile,BufRead *.yml setlocal ft=yaml
+autocmd BufNewFile,BufRead *.yaml setlocal ft=yaml
+autocmd BufNewFile,BufRead *.php setlocal ft=php
+autocmd BufNewFile,BufRead *.ts setlocal ft=typescript
+autocmd BufNewFile,BufRead *.rs setlocal ft=rust
+autocmd BufNewFile,BufRead *.dart setlocal ft=dart
 
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
@@ -115,6 +138,9 @@ set backspace=2
 
 " 垂直分割をデフォルトにする
 set diffopt+=vertical
+
+" python3
+let g:python3_host_prog = expand('/usr/local/bin/python3')
 
 " http://inari.hatenablog.com/entry/2014/05/05/231307
 """"""""""""""""""""""""""""""

@@ -19,10 +19,50 @@ on_i  = 1
 on_ft = ['snippet']
 depends = ['neosnippet-snippets']
 
+# =================typescript=====================================
+[[plugins]]
+repo = 'mhartington/nvim-typescript'
+on_ft = ['typescript']
+hook_post_update = './install.sh'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript']
+hook_source = 'let g:typescript_indent_disable = 1'
+
+[[plugins]]
+repo = "jelera/vim-javascript-syntax"
+on_ft = ['javascript']
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+on_ft = ['python']
+hook_source = 'let g:syntastic_python_checkers = ["pyflakes", "pep8"]'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+
+# for terraform 
+[[plugins]]
+repo = "hashivim/vim-terraform"
+on_ft = "terraform"
+hook_add = '''
+    let g:terraform_align=1
+    let g:terraform_fmt_on_save=1
+    let g:terraform_fold_sections=1
+'''
+
+[[plugins]]
+on_ft = "terraform"
+repo = 'juliosueiras/vim-terraform-completion'
+
 # =================deoplete=====================================
 [[plugins]]
 repo = "Shougo/deoplete.nvim"
-depends = ['nvim-yarp', 'vim-hug-neovim-rpc']
 hook_source = '''
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#auto_complete_delay = 0
@@ -69,30 +109,4 @@ hook_source = '''
     let g:jedi#auto_initialization    = 0
     let g:jedi#popup_select_first     = 0
 '''
-
-[[plugins]]
-repo = 'scrooloose/syntastic'
-on_ft = ['python']
-hook_source = 'let g:syntastic_python_checkers = ["pyflakes", "pep8"]'
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = ['toml']
-
-# for terraform 
-[[plugins]]
-repo = "hashivim/vim-terraform"
-on_ft = "terraform"
-hook_add = '''
-    let g:terraform_align=1
-    let g:terraform_fmt_on_save=1
-    let g:terraform_fold_sections=1
-'''
-
-[[plugins]]
-on_ft = "terraform"
-repo = 'juliosueiras/vim-terraform-completion'
 
