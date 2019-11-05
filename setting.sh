@@ -23,3 +23,8 @@ fi
 ln -s $ORIG/$CONFIG $HOME/$CONFIG
 
 $ORIG/vim_install.sh
+
+if [ ! -e "./finish" ]; then
+    cat bashrc_append >> ~/.bashrc
+    touch finish
+fi
