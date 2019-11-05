@@ -20,10 +20,10 @@ on_ft = ['snippet']
 depends = ['neosnippet-snippets']
 
 # =================typescript=====================================
-[[plugins]]
-repo = 'mhartington/nvim-typescript'
-on_ft = ['typescript']
-hook_post_update = './install.sh'
+#[[plugins]]
+#repo = 'mhartington/nvim-typescript'
+#on_ft = ['typescript']
+#hook_post_update = './install.sh'
 
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
