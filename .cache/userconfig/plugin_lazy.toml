@@ -35,18 +35,13 @@ repo = "jelera/vim-javascript-syntax"
 on_ft = ['javascript']
 
 [[plugins]]
-repo = 'scrooloose/syntastic'
-on_ft = ['python']
-hook_source = 'let g:syntastic_python_checkers = ["pyflakes", "pep8"]'
-
-[[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
 
-# for terraform 
+# for terraform
 [[plugins]]
 repo = "hashivim/vim-terraform"
 on_ft = "terraform"
@@ -109,4 +104,3 @@ hook_source = '''
     let g:jedi#auto_initialization    = 0
     let g:jedi#popup_select_first     = 0
 '''
-
