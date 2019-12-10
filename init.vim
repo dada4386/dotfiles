@@ -145,6 +145,8 @@ set diffopt+=vertical
 " python3
 let g:python3_host_prog = expand('/usr/local/bin/python3')
 
+autocmd InsertLeave * set nopaste
+
 " http://inari.hatenablog.com/entry/2014/05/05/231307
 """"""""""""""""""""""""""""""
 " 全角スペースの表示
