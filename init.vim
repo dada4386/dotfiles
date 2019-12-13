@@ -116,7 +116,6 @@ autocmd BufNewFile,BufRead *.cson setlocal ft=json
 autocmd BufNewFile,BufRead *.yml setlocal ft=yaml
 autocmd BufNewFile,BufRead *.yaml setlocal ft=yaml
 autocmd BufNewFile,BufRead *.php setlocal ft=php
-autocmd BufNewFile,BufRead *.ts setlocal ft=typescript
 autocmd BufNewFile,BufRead *.rs setlocal ft=rust
 autocmd BufNewFile,BufRead *.dart setlocal ft=dart
 
