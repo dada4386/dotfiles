@@ -51,11 +51,13 @@ hook_add = '''
         \ 'python': ['autopep8', 'isort'],
         \ 'c' : ['clang-format'],
         \ 'cpp' : ['clang-format'],
+        \ 'typescript' : ['eslint']
         \ }
     let g:ale_linters = {
         \ 'python': ['flake8'],
         \ 'c': ['cpplint'],
-        \ 'cpp': ['cpplint']
+        \ 'cpp': ['cpplint'],
+        \ 'typescript': ['tsserver']
         \ }
 
     " Ctrl + kで次の指摘へ、Ctrl + jで前の指摘へ移動
