@@ -57,8 +57,10 @@ hook_add = '''
         \ 'python': ['flake8'],
         \ 'c': ['cpplint'],
         \ 'cpp': ['cpplint'],
-        \ 'typescript': ['tsserver']
+        \ 'typescript': ['tsserver'],
+        \ 'go': ['gometalinter']
         \ }
+    let g:ale_go_gometalinter_options = '--fast --enable=staticcheck --enable=gosimple --enable=unused'
 
     " Ctrl + kで次の指摘へ、Ctrl + jで前の指摘へ移動
     nmap <silent> <C-k> <Plug>(ale_previous_wrap)
