@@ -6,8 +6,3 @@ function _update_ps1() {
 if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
-
-POWERLINE_SETTING="$HOME/.local/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh"
-if [ -e $POWERLINE_SETTING ]; then
-    . $POWERLINE_SETTING
-fi
