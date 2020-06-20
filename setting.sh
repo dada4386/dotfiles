@@ -27,8 +27,3 @@ $ORIG/vim_install.sh
 if [ ! -e "${HOME}/.tmux.conf" ]; then
     ln -s $ORIG/tmux.conf ${HOME}/.tmux.conf
 fi
-
-if [ ! -e "./finish" ]; then
-    cat ${ORIG}/bashrc_append >> ~/.bashrc
-    touch finish
-fi
