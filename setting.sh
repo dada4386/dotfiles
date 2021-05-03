@@ -27,3 +27,9 @@ $ORIG/vim_install.sh
 if [ ! -e "${HOME}/.tmux.conf" ]; then
     ln -s $ORIG/tmux.conf ${HOME}/.tmux.conf
 fi
+
+# fish
+if [ ! -e "${HOME}/.config/fish" ]; then
+    mkdir -p ${HOME}/.config
+    ln -s ${ORIG}/fish ${HOME}/.config/fish
+fi
