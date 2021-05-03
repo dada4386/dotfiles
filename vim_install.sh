@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt-get install -y git build-essential ncurses-dev lua5.2 lua5.2-dev luajit python-dev clang-format \
-    python3-dev ruby-dev python3-pip python-setuptools software-properties-common npm tmux powerline-shell
+    python3-dev ruby-dev python3-pip python-setuptools software-properties-common npm tmux
 pip3 install --user neovim pynvim powerline-status cpplint flake8 autopep8 isort
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
